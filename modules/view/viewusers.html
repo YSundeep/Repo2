@@ -1,0 +1,13 @@
+<table class="tableclass">
+	<tr ng-repeat="user in users">
+		<td>{{user.fname}}</td>
+		<td>{{user.lname}}</td>
+		<td>{{user.age}}</td>
+		<td>{{user.email}}</td>
+		<td>
+			<div ng-click="updateUser()">Update User</div>
+			<div ng-click="deleteUser()">Delete User</div>
+			<div ng-click="viewUser()">View User</div>
+		</td>
+	</tr>
+</table>

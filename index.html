@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+		Create User
+	</title>
+	<script type="text/javascript" src=".\js\angular.min.js"></script>
+	<script type="text/javascript" src=".\js\angular-route.min.js"></script>
+	<script type="text/javascript" src=".\app.js"></script>
+	<script type="text/javascript" src=".\app-controller.js"></script>
+	<link rel="stylesheet" type="text/css" href=".\styles\style.css">
+</head>
+<body ng-app="myApp" ng-controller="maincontroller">
+	<div><a href="#/createUser" class="createUserClass">Create User</a></div>
+	<div><a href="#/viewAllUsers" class="viewAllUsers">View All Users</a></div>
+	<div><a href="#/updateUser" class="UpdateUser">Updatrre User</a></div>
+	<div><a href="#/deleteUser" class="deleteUser">Delete User</a></div>
+	
+	<ng-view></ng-view>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+		Web Services Sample
+	</title>
+		<script type="text/javascript" src="..\..\js\angular.min.js"></script>
+</head>
+<body>
+	<div ng-app = "myApp" ng-controller="myController">
+		<table border="1">
+			<tr ng-repeat="user in users">
+				<td>{{user.id}}</td>
+				<td>{{user.fname}}</td>
+				<td>{{user.lname}}</td>
+				<td>{{user.age}}</td>
+				<td>
+					<div ng-click="viewUser(user.id)">View info</div>
+					<div ng-click="updateUser(user.id)">Update User</div>
+					<div ng-click="deleteUser(user.id)">Delete User</div>
+				</td>
+				<pre>
+				User Info  
+				Name       : {{userInfo.id}}
+				First Name : {{userInfo.fname}}
+				last Name  : {{userInfo.lname}}
+				Age        : {{userInfo.age}}	
+				</pre>
+			</tr>
+		</table>
+	</div>
+	<script type="text/javascript">
+		var app = angular.module('myApp',[]);
+		app.controller('myController',function($scope,$http){
+			$http({
+				method : "GET",
+				url : 'http://api.qshore.com/users',
+			}).then(function(response){
+				$scope.users = response.data.data;
+			},
+			function(response){
+
+			});
+
+			$scope.viewUser = function(userId){
+				var url = 'http://api.qshore.com/view-user/'+userId;
+				$http({
+					method : "GET",
+					url : url,
+
+				}).then(function(res){
+					$scope.userInfo = res.data.data;
+				},
+				function(res){
+
+				});
+			}
+
+		})
+	</script>
+</body>
+</html>

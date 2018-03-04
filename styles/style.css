@@ -1,0 +1,31 @@
+.createUserClass{
+	background-color: red;
+	margin: 0 auto;
+	float: left;
+	padding : 10px;
+	color: white;
+}
+
+.viewAllUsers{
+	background-color: green;
+	margin: 0 auto;
+	float: left;
+	padding : 10px;
+	color: white;
+}
+
+.UpdateUser{
+	background-color: blue;
+	margin: 0 auto;
+	float: left;
+	padding : 10px;
+	color: white;
+}
+
+.deleteUser{
+	background-color: purple;
+	margin: 0 auto;
+	float: left;
+	padding : 10px;
+	color: white;
+}
